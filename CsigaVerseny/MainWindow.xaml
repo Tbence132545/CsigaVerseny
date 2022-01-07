@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CsigaVerseny"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1100" Width="1273">
     <Grid>
-
+        <Button Content="Új futam" FontSize="30" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
+        <Button Content="Start" FontSize="30" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
+        <Button Content="Új bajnokság" FontSize="30" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
+        <Button Content="Eredmények" FontSize="30" HorizontalAlignment="Left" Margin="606,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
+        <Rectangle x:Name="csiga1mezony" HorizontalAlignment="Left" Height="232" Margin="10,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="1121" Fill="LightGreen"/>
+        <Rectangle x:Name="csiga2mezony" HorizontalAlignment="Left" Height="232" Margin="10,334,0,0" Stroke="Black" VerticalAlignment="Top" Width="1121" Fill="LightGreen"/>
+        <Rectangle x:Name="csiga3mezony" HorizontalAlignment="Left" Height="232" Margin="10,566,0,0" Stroke="Black" VerticalAlignment="Top" Width="1121" Fill="LightGreen"/>
+        <Rectangle HorizontalAlignment="Left" Height="696" Margin="10,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="201"/>
+        <Rectangle x:Name="csiga1" HorizontalAlignment="Left" Height="232" Margin="10,102,0,0"  VerticalAlignment="Top" Width="200" >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Kepek/csiga1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="csiga2" HorizontalAlignment="Left" Height="232" Margin="10,334,0,0"  VerticalAlignment="Top" Width="200"   >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource= "/Kepek/csiga2.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="232" Margin="10,566,0,0"  VerticalAlignment="Top" Width="200" >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource= "/Kepek/csiga3.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Start" HorizontalAlignment="Left" Margin="86,385,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="188" Width="337" FontSize="120" Foreground="White">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.327"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Cél" HorizontalAlignment="Left" Margin="895,446,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="188" Width="337" FontSize="120" Foreground="white" >
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.327"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Window>
