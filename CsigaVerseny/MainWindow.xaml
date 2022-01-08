@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1100" Width="1273">
     <Grid>
-        <Button x:Name="ujfutam_btn" Content="Új futam" FontSize="30" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
+        <Button x:Name="ujfutam_btn" Content="Új futam" FontSize="30" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="ujfutam_btn_Click"/>
         <Button x:Name="start_btn" Content="Start" FontSize="30" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="start_btn_Click"/>
         <Button x:Name="ujbajnoksag_btn" Content="Új bajnokság" FontSize="30" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
         <Button x:Name="eredmenyek_btn" Content="Eredmények" FontSize="30" HorizontalAlignment="Left" Margin="606,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
