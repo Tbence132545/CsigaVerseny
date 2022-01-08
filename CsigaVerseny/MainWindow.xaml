@@ -10,7 +10,7 @@
         
         <Button x:Name="ujfutam_btn" Content="Új futam" FontSize="30" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="ujfutam_btn_Click"/>
         <Button x:Name="start_btn" Content="Start" FontSize="30" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="start_btn_Click"/>
-        <Button x:Name="ujbajnoksag_btn" Content="Új bajnokság" FontSize="30" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
+        <Button x:Name="ujbajnoksag_btn" Content="Új bajnokság" FontSize="30" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="ujbajnoksag_btn_Click"/>
         <Button x:Name="eredmenyek_btn" Content="Eredmények" FontSize="30" HorizontalAlignment="Left" Margin="606,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="eredmenyek_btn_Click"/>
         <Rectangle x:Name="csiga1mezony" HorizontalAlignment="Left" Height="232" Margin="10,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="1121" Fill="LightGreen"/>
         <Rectangle x:Name="csiga2mezony" HorizontalAlignment="Left" Height="232" Margin="10,334,0,0" Stroke="Black" VerticalAlignment="Top" Width="1121" Fill="LightGreen"/>
