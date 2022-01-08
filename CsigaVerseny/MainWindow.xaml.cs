@@ -40,7 +40,7 @@ namespace CsigaVerseny
             idozito.Interval = new TimeSpan(0, 0, 0, 0, 3);
            
         }
-        public void Pontszamito()
+        static public void Pontszamito()
         {
             switch (helyezesek[0].Name)
             {
@@ -84,7 +84,12 @@ namespace CsigaVerseny
         }
         
         private void start_btn_Click(object sender, RoutedEventArgs e)
+
         {
+            eredmenyek_btn.IsEnabled = false;
+            ujbajnoksag_btn.IsEnabled = false;
+            ujfutam_btn.IsEnabled = false;
+            start_btn.IsEnabled = false;
             Random rnd = new Random();
             kiMelyikSebessegetKapja.Clear();
             for (int i = 0; i < 3; i++)
@@ -112,8 +117,11 @@ namespace CsigaVerseny
             Mozogtat(csiga3, csiga3mezony, sebessegek[kiMelyikSebessegetKapja[2]],csiga3_label);
             if (csiga1.Margin.Left == 930 && csiga2.Margin.Left == 930 && csiga3.Margin.Left == 930)
             {
-                Pontszamito();
+                
                 idozito.Stop();
+                eredmenyek_btn.IsEnabled = true;
+                ujbajnoksag_btn.IsEnabled = true;
+                ujfutam_btn.IsEnabled = true;
             }
         }
         private static void Mozogtat(Rectangle csiganev, Rectangle csigamezony, double sebesseg, Label helyezesfelirat)
@@ -143,6 +151,7 @@ namespace CsigaVerseny
                         case 2:
                             csigamezony.Fill = new SolidColorBrush(Color.FromRgb(169, 113, 66));
                             helyezesfelirat.Content = "3";
+                            Pontszamito();
                             break;
 
                     }
@@ -163,6 +172,8 @@ namespace CsigaVerseny
         
         private void ujfutam_btn_Click(object sender, RoutedEventArgs e)
         {
+            ujfutam_btn.IsEnabled = false;
+            start_btn.IsEnabled = true;
             Reset(csiga1, csiga1mezony,csiga1_label);
             Reset(csiga2, csiga2mezony,csiga2_label);
             Reset(csiga3, csiga3mezony,csiga3_label);
