@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1100" Width="1273">
     <Grid>
-        
+
         <Button x:Name="ujfutam_btn" Content="Új futam" FontSize="30" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="ujfutam_btn_Click" IsEnabled="False"/>
         <Button x:Name="start_btn" Content="Start" FontSize="30" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="start_btn_Click"/>
         <Button x:Name="ujbajnoksag_btn" Content="Új bajnokság" FontSize="30" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="ujbajnoksag_btn_Click" IsEnabled="False"/>
@@ -39,24 +39,25 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Rectangle x:Name="csiga1" HorizontalAlignment="Left" Height="232" Margin="10,102,0,0"  VerticalAlignment="Top" Width="200" >
+        <Rectangle x:Name="csiga1" HorizontalAlignment="Left" Height="232" Margin="10,102,0,0"  VerticalAlignment="Top" Width="200" MouseDown="Turbo" >
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Kepek/csiga1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="csiga2" HorizontalAlignment="Left" Height="232" Margin="10,334,0,0"  VerticalAlignment="Top" Width="200"   >
+        <Rectangle x:Name="csiga2" HorizontalAlignment="Left" Height="232" Margin="10,334,0,0"  VerticalAlignment="Top" Width="200" MouseDown="Turbo"   >
             <Rectangle.Fill>
                 <ImageBrush ImageSource= "/Kepek/csiga2.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="232" Margin="10,566,0,0"  VerticalAlignment="Top" Width="200" >
+        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="232" Margin="10,566,0,0"  VerticalAlignment="Top" Width="200" MouseDown="Turbo" >
             <Rectangle.Fill>
                 <ImageBrush ImageSource= "/Kepek/csiga3.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        
+
         <Label x:Name="csiga1_label" Foreground="white" FontSize="60" Content="" HorizontalAlignment="Center" Margin="0,159,0,0" VerticalAlignment="Top" Height="147" Width="141" FontFamily="Comic Sans MS"/>
         <Label x:Name="csiga2_label" Foreground="white" FontSize="60" Content="" HorizontalAlignment="Center" Margin="0,419,0,0" VerticalAlignment="Top" Height="147" Width="141" FontFamily="Comic Sans MS"/>
         <Label x:Name="csiga3_label" Foreground ="White" FontSize="60" Content="" HorizontalAlignment="Center" Margin="0,637,0,0" VerticalAlignment="Top" Height="147" Width="141" FontFamily="Comic Sans MS"/>
+        <Label FontSize="15" Foreground="Gray" Content="Turbó: A csigákra kattintgatva előnyhöz juttathatjuk őket." HorizontalAlignment="Left" Margin="816,35,0,0" VerticalAlignment="Top" Height="59" Width="417"/>
     </Grid>
 </Window>

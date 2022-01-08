@@ -166,6 +166,10 @@ namespace CsigaVerseny
             helyezesfelirat.Content = "";
             csiganev.Margin = new Thickness(10, currenttop, 0,0);
             csigamezo.Fill = new SolidColorBrush(Color.FromRgb(144, 238, 144));
+            ujfutam_btn.IsEnabled = false;
+            eredmenyek_btn.IsEnabled = false;
+            ujbajnoksag_btn.IsEnabled = false;
+            start_btn.IsEnabled = true;
             helyezesek.Clear();
             kiMelyikSebessegetKapja.Clear();
         }
@@ -195,6 +199,19 @@ namespace CsigaVerseny
             eredmeny.Show();
 
 
+        }
+       
+        private void Turbo(object sender, MouseButtonEventArgs e)
+        {
+            if (start_btn.IsEnabled == false) { 
+            Rectangle csiga = (Rectangle)sender;
+            
+            double currentMarginTop = csiga.Margin.Top;
+            double currentLeft = csiga.Margin.Left;
+            if(csiga.Margin.Left + 5 < 930) { 
+            csiga.Margin = new Thickness(currentLeft += 5, currentMarginTop, 0, 0);
+            }
+            }
         }
     }
     public class Csiga
