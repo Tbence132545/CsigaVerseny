@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1100" Width="1273">
     <Grid>
+        
         <Button x:Name="ujfutam_btn" Content="Új futam" FontSize="30" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="ujfutam_btn_Click"/>
         <Button x:Name="start_btn" Content="Start" FontSize="30" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="67" Width="180" Click="start_btn_Click"/>
         <Button x:Name="ujbajnoksag_btn" Content="Új bajnokság" FontSize="30" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="67" Width="180"/>
@@ -15,6 +16,29 @@
         <Rectangle x:Name="csiga2mezony" HorizontalAlignment="Left" Height="232" Margin="10,334,0,0" Stroke="Black" VerticalAlignment="Top" Width="1121" Fill="LightGreen"/>
         <Rectangle x:Name="csiga3mezony" HorizontalAlignment="Left" Height="232" Margin="10,566,0,0" Stroke="Black" VerticalAlignment="Top" Width="1121" Fill="LightGreen"/>
         <Rectangle HorizontalAlignment="Left" Height="696" Margin="10,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="201"/>
+        <Label Content="Start" HorizontalAlignment="Left" Margin="86,385,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="188" Width="337" FontSize="120" Foreground="White" Visibility="Visible" FontFamily="Comic Sans MS">
+            <Label.Background>
+                <SolidColorBrush Opacity="1"/>
+            </Label.Background>
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.327"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Cél" HorizontalAlignment="Left" Margin="895,446,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="188" Width="337" FontSize="120" Foreground="white" FontFamily="Comic Sans MS" >
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.327"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
         <Rectangle x:Name="csiga1" HorizontalAlignment="Left" Height="232" Margin="10,102,0,0"  VerticalAlignment="Top" Width="200" >
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Kepek/csiga1.png"/>
@@ -30,25 +54,9 @@
                 <ImageBrush ImageSource= "/Kepek/csiga3.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Start" HorizontalAlignment="Left" Margin="86,385,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="188" Width="337" FontSize="120" Foreground="White">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90.327"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Label Content="Cél" HorizontalAlignment="Left" Margin="895,446,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="188" Width="337" FontSize="120" Foreground="white" >
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90.327"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
+        
+        <Label x:Name="csiga1_label" Foreground="white" FontSize="60" Content="" HorizontalAlignment="Center" Margin="0,159,0,0" VerticalAlignment="Top" Height="147" Width="141" FontFamily="Comic Sans MS"/>
+        <Label x:Name="csiga2_label" Foreground="white" FontSize="60" Content="" HorizontalAlignment="Center" Margin="0,419,0,0" VerticalAlignment="Top" Height="147" Width="141" FontFamily="Comic Sans MS"/>
+        <Label x:Name="csiga3_label" Foreground ="White" FontSize="60" Content="" HorizontalAlignment="Center" Margin="0,637,0,0" VerticalAlignment="Top" Height="147" Width="141" FontFamily="Comic Sans MS"/>
     </Grid>
 </Window>

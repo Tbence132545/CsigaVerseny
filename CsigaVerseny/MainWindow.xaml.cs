@@ -23,7 +23,7 @@ namespace CsigaVerseny
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static double[] sebessegek = new double[3] { 1.15, 1.3, 1.5 };
+        public static double[] sebessegek = new double[3] { 1.35, 1.5, 1.65};
         static List<int> kiMelyikSebessegetKapja = new List<int>() { 0, 0, 0 };
         static List<Rectangle> helyezesek = new List<Rectangle>();
 
@@ -62,15 +62,15 @@ namespace CsigaVerseny
         {
             //Külön alprogramot írok Mozogtat néven mert 3 csiga van
 
-            Mozogtat(csiga1, csiga1mezony, sebessegek[kiMelyikSebessegetKapja[0]]);
-            Mozogtat(csiga2, csiga2mezony, sebessegek[kiMelyikSebessegetKapja[1]]);
-            Mozogtat(csiga3, csiga3mezony, sebessegek[kiMelyikSebessegetKapja[2]]);
+            Mozogtat(csiga1, csiga1mezony, sebessegek[kiMelyikSebessegetKapja[0]],csiga1_label);
+            Mozogtat(csiga2, csiga2mezony, sebessegek[kiMelyikSebessegetKapja[1]],csiga2_label);
+            Mozogtat(csiga3, csiga3mezony, sebessegek[kiMelyikSebessegetKapja[2]],csiga3_label);
             if (csiga1.Margin.Left == 930 && csiga2.Margin.Left == 930 && csiga3.Margin.Left == 930)
             {
                 idozito.Stop();
             }
         }
-        private static void Mozogtat(Rectangle csiganev, Rectangle csigamezony, double sebesseg)
+        private static void Mozogtat(Rectangle csiganev, Rectangle csigamezony, double sebesseg, Label helyezesfelirat)
         {
             if (!helyezesek.Contains(csiganev)) {
                 double currentLeft = csiganev.Margin.Left;
@@ -88,12 +88,15 @@ namespace CsigaVerseny
                     {
                         case 0:
                             csigamezony.Fill = new SolidColorBrush(Color.FromRgb(255, 215, 0));
+                            helyezesfelirat.Content = "1";
                             break;
                         case 1:
                             csigamezony.Fill = new SolidColorBrush(Color.FromRgb(211, 211, 211));
+                            helyezesfelirat.Content = "2";
                             break;
                         case 2:
                             csigamezony.Fill = new SolidColorBrush(Color.FromRgb(169, 113, 66));
+                            helyezesfelirat.Content = "3";
                             break;
 
                     }
@@ -102,9 +105,10 @@ namespace CsigaVerseny
                 }
             }
         }
-        private void Reset(Rectangle csiganev, Rectangle csigamezo)
+        private void Reset(Rectangle csiganev, Rectangle csigamezo,Label helyezesfelirat)
         {
             double currenttop = csiganev.Margin.Top;
+            helyezesfelirat.Content = "";
             csiganev.Margin = new Thickness(10, currenttop, 0,0);
             csigamezo.Fill = new SolidColorBrush(Color.FromRgb(144, 238, 144));
             helyezesek.Clear();
@@ -113,9 +117,9 @@ namespace CsigaVerseny
         
         private void ujfutam_btn_Click(object sender, RoutedEventArgs e)
         {
-            Reset(csiga1, csiga1mezony);
-            Reset(csiga2, csiga2mezony);
-            Reset(csiga3, csiga3mezony);
+            Reset(csiga1, csiga1mezony,csiga1_label);
+            Reset(csiga2, csiga2mezony,csiga2_label);
+            Reset(csiga3, csiga3mezony,csiga3_label);
         }
     }
 }
