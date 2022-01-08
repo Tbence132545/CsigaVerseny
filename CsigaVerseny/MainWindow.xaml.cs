@@ -25,6 +25,9 @@ namespace CsigaVerseny
     {
         public static double[] sebessegek = new double[3] { 1.35, 1.5, 1.65};
         static List<int> kiMelyikSebessegetKapja = new List<int>() { 0, 0, 0 };
+        static Csiga elsoJatekos = new Csiga();
+        static Csiga masodikJatekos = new Csiga();
+        static Csiga harmadikJatekos = new Csiga();
         static List<Rectangle> helyezesek = new List<Rectangle>();
 
         DispatcherTimer idozito = new DispatcherTimer();
@@ -34,10 +37,52 @@ namespace CsigaVerseny
             InitializeComponent();
     
             idozito.Tick += new EventHandler(IdozitoEvent);
-            idozito.Interval = new TimeSpan(0, 0, 0, 0, 6);
+            idozito.Interval = new TimeSpan(0, 0, 0, 0, 3);
            
         }
-
+        public void Pontszamito()
+        {
+            switch (helyezesek[0].Name)
+            {
+                case "csiga1":
+                    elsoJatekos.hanyszorVoltElso++;
+                    break;
+                case "csiga2":
+                    masodikJatekos.hanyszorVoltElso++;
+                    break;
+                case "csiga3":
+                    harmadikJatekos.hanyszorVoltElso++;
+                    break;
+            }
+            switch (helyezesek[1].Name)
+            {
+                case "csiga1":
+                    elsoJatekos.hanyszorVoltMasodik++;
+                    break;
+                case "csiga2":
+                    masodikJatekos.hanyszorVoltMasodik++;
+                    break;
+                case "csiga3":
+                    harmadikJatekos.hanyszorVoltMasodik++;
+                    break;
+            }
+            switch (helyezesek[2].Name)
+            {
+                case "csiga1":
+                    elsoJatekos.hanyszorVoltHarmadik++;
+                    break;
+                case "csiga2":
+                    masodikJatekos.hanyszorVoltHarmadik++;
+                    break;
+                case "csiga3":
+                    harmadikJatekos.hanyszorVoltHarmadik++;
+                    break;
+            }
+            elsoJatekos.pont = elsoJatekos.hanyszorVoltElso * 3 + elsoJatekos.hanyszorVoltMasodik * 2 + elsoJatekos.hanyszorVoltHarmadik * 1;
+            masodikJatekos.pont = masodikJatekos.hanyszorVoltElso * 3 + masodikJatekos.hanyszorVoltMasodik * 2 + masodikJatekos.hanyszorVoltHarmadik * 1;
+            harmadikJatekos.pont = harmadikJatekos.hanyszorVoltElso * 3 + harmadikJatekos.hanyszorVoltMasodik * 2 + harmadikJatekos.hanyszorVoltHarmadik * 1;
+        }
+        
         private void start_btn_Click(object sender, RoutedEventArgs e)
         {
             Random rnd = new Random();
@@ -67,6 +112,7 @@ namespace CsigaVerseny
             Mozogtat(csiga3, csiga3mezony, sebessegek[kiMelyikSebessegetKapja[2]],csiga3_label);
             if (csiga1.Margin.Left == 930 && csiga2.Margin.Left == 930 && csiga3.Margin.Left == 930)
             {
+                Pontszamito();
                 idozito.Stop();
             }
         }
@@ -121,5 +167,35 @@ namespace CsigaVerseny
             Reset(csiga2, csiga2mezony,csiga2_label);
             Reset(csiga3, csiga3mezony,csiga3_label);
         }
+
+        private void eredmenyek_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 eredmeny = new Window2(elsoJatekos,masodikJatekos,harmadikJatekos);
+            eredmeny.Show();
+        }
+    }
+    public class Csiga
+    {
+
+        private int elso;
+        private int masodik;
+        private int harmadik;
+        private int pontok;
+
+        public Csiga()
+        {
+
+            elso = 0;
+            masodik = 0;
+            harmadik = 0;
+            pontok = 0;
+
+        }
+
+
+        public int hanyszorVoltElso { get => elso; set => elso = value; }
+        public int hanyszorVoltMasodik { get => masodik; set => masodik = value; }
+        public int hanyszorVoltHarmadik { get => harmadik; set => harmadik = value; }
+        public int pont { get => pontok; set => pontok = value; }
     }
 }
