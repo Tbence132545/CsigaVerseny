@@ -25,9 +25,9 @@ namespace CsigaVerseny
     {
         public static double[] sebessegek = new double[3] { 1.35, 1.5, 1.65};
         static List<int> kiMelyikSebessegetKapja = new List<int>() { 0, 0, 0 };
-        static Csiga elsoJatekos = new Csiga();
-        static Csiga masodikJatekos = new Csiga();
-        static Csiga harmadikJatekos = new Csiga();
+        static Csiga elsoJatekos = new Csiga("csiga1");
+        static Csiga masodikJatekos = new Csiga("csiga2");
+        static Csiga harmadikJatekos = new Csiga("csiga3");
         static List<Rectangle> helyezesek = new List<Rectangle>();
 
         DispatcherTimer idozito = new DispatcherTimer();
@@ -221,13 +221,15 @@ namespace CsigaVerseny
         private int masodik;
         private int harmadik;
         private int pontok;
+        private string nev;
 
-        public Csiga()
+        public Csiga(string n)
         {
 
             elso = 0;
             masodik = 0;
             harmadik = 0;
+            Nev = n;
             pontok = 0;
 
         }
@@ -237,5 +239,6 @@ namespace CsigaVerseny
         public int hanyszorVoltMasodik { get => masodik; set => masodik = value; }
         public int hanyszorVoltHarmadik { get => harmadik; set => harmadik = value; }
         public int pont { get => pontok; set => pontok = value; }
+        public string Nev { get => nev; set => nev = value; }
     }
 }
