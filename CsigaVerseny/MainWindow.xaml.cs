@@ -188,16 +188,26 @@ namespace CsigaVerseny
             Window2 eredmeny = new Window2(elsoJatekos,masodikJatekos,harmadikJatekos);
             eredmeny.Show();
         }
-
+        private void CsigaObjektumReset(Csiga csiga)
+        {
+            csiga.hanyszorVoltElso = 0;
+            csiga.hanyszorVoltMasodik = 0;
+            csiga.hanyszorVoltHarmadik = 0;
+            csiga.pont = 0;
+        }
         private void ujbajnoksag_btn_Click(object sender, RoutedEventArgs e)
         {
+           
+            
             Reset(csiga1, csiga1mezony, csiga1_label);
             Reset(csiga2, csiga2mezony, csiga2_label);
             Reset(csiga3, csiga3mezony, csiga3_label);
             Window2 eredmeny = new Window2(elsoJatekos, masodikJatekos, harmadikJatekos);
             eredmeny.felsoFelirat.Content = "Bajnokság végeredménye:";
             eredmeny.Show();
-
+            CsigaObjektumReset(elsoJatekos);
+            CsigaObjektumReset(masodikJatekos);
+            CsigaObjektumReset(harmadikJatekos);
 
         }
        
